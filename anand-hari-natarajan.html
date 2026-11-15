@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f5f0" />
+  <meta name="description" content="Anand Hari Natarajan is a physics doctoral researcher at the University of Arizona, working on theoretical open quantum systems and ultrafast light–matter interactions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anand Hari Natarajan — Theoretical Physicist" />
+  <meta property="og:description" content="On the dynamics of quantum matter. Research, selected work, and writing." />
+  <meta property="og:url" content="https://anand-hari-natarajan.com/" />
+  <title>Anand Hari Natarajan — Theoretical Physicist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f5f0;
+      --paper-deep: #eae9e2;
+      --white: #fffefa;
+      --ink: #202820;
+      --muted: #70766c;
+      --line: #d8d9cf;
+      --forest: #23392f;
+      --forest-dark: #1b2c25;
+      --bone: #f3f1e6;
+      --gold: #c4a176;
+      --serif: 'Newsreader', 'Iowan Old Style', 'Baskerville', Georgia, serif;
+      --sans: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+      --max: 1336px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    ::selection { background: #d1dfc3; color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #b08350; outline-offset: 6px; }
+    .wrap { width: min(var(--max), calc(100% - 112px)); margin-inline: auto; }
+    .smallcap { font-size: 11px; line-height: 1.65; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; }
+    .arrow { display: inline-block; transition: transform .22s ease; }
+    a:hover .arrow { transform: translate(3px, -3px); }
+    .site-header { position: relative; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
+    .header-inner { height: 84px; display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+    .identity { display: inline-flex; align-items: center; gap: 16px; white-space: nowrap; }
+    .monogram { border: 1px solid #7f867b; color: var(--forest); width: 37px; height: 37px; display: grid; place-items: center; font-family: var(--serif); font-size: 20px; letter-spacing: -.05em; padding-top: 4px; }
+    .identity-name { font-family: var(--serif); font-size: 21px; font-weight: 500; letter-spacing: -.025em; }
+    .nav { display: flex; align-items: center; gap: clamp(24px, 3vw, 48px); }
+    .nav a { font-size: 12px; font-weight: 600; letter-spacing: .025em; transition: color .2s ease; }
+    .nav a:hover { color: #7b866f; }
+    .nav .contact-nav { border-bottom: 1px solid currentColor; padding: 0 0 5px; }
+    .menu-button { display: none; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 10px; }
+    .menu-button span { display: block; width: 24px; height: 1px; background: currentColor; margin: 6px 0; transition: transform .2s ease; }
+
+    .hero { padding: 56px 0 90px; overflow: hidden; }
+    .hero-top { display: flex; justify-content: space-between; align-items: center; padding: 0 0 64px; color: #626a62; }
+    .hero-grid { display: grid; grid-template-columns: 1.07fr .93fr; column-gap: 6%; align-items: center; }
+    .hero-copy { position: relative; z-index: 1; padding: 6px 0 8px; }
+    .hero-kicker { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; color: #687065; }
+    .hero-kicker .rule { height: 1px; width: 36px; background: #acb1a7; }
+    .hero-title { font-family: var(--serif); font-weight: 400; font-size: clamp(80px, 8.65vw, 144px); line-height: .88; letter-spacing: -.068em; margin: 0 0 40px -7px; }
+    .hero-title span { display: block; }
+    .hero-title .last { font-style: italic; color: var(--forest); padding-bottom: .09em; }
+    .hero-blurb { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.75; max-width: 530px; color: #535d54; margin: 0; letter-spacing: -.025em; }
+    .hero-blurb strong { color: var(--ink); font-weight: 500; }
+    .hero-cta { display: inline-flex; gap: 20px; align-items: center; margin-top: 36px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); font-size: 13px; font-weight: 600; }
+    .figure-frame { height: 550px; display: flex; flex-direction: column; position: relative; border: 1px solid #dadcd0; background: #eeeee7; padding: 25px 27px 23px; }
+    .figure-label { display: flex; justify-content: space-between; color: #7b8378; font-size: 10px; letter-spacing: .14em; font-weight: 600; text-transform: uppercase; }
+    .wave-art { flex: 1; width: 100%; overflow: visible; }
+    .wave-art .fine { stroke: #c9cfc4; stroke-width: .7; }
+    .wave-art .major { stroke: #acb5a8; stroke-width: 1; }
+    .wave-art .curve { fill: none; stroke: var(--forest); stroke-width: 2.25; stroke-linejoin: round; stroke-linecap: round; }
+    .wave-art .curve-two { fill: none; stroke: #ae9b7f; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+    .wave-art text { fill: #7a8378; font-family: var(--sans); font-size: 12px; letter-spacing: .04em; }
+    .wave-art .math { font-family: var(--serif); font-size: 17px; font-style: italic; fill: #425448; }
+    .figure-foot { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #cfd3c8; padding-top: 15px; gap: 10px; color: #686f64; font-size: 11px; }
+    .hero-index { margin-top: 80px; border-top: 1px solid var(--line); padding-top: 25px; display: flex; justify-content: space-between; color: #6c746a; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
+    .hero-index strong { color: var(--ink); font-weight: 600; }
+
+    .research { background: var(--forest); color: var(--bone); padding: 116px 0 112px; position: relative; overflow: hidden; }
+    .research:before { content: ''; position: absolute; width: 660px; height: 660px; right: -260px; top: -260px; border: 1px solid rgba(247,247,233,.075); border-radius: 50%; box-shadow: 0 0 0 80px rgba(0,0,0,0), 0 0 0 160px rgba(247,247,233,.025), 0 0 0 245px rgba(247,247,233,.015); pointer-events: none; }
+    .section-label { display: flex; align-items: center; gap: 22px; margin: 0 0 55px; }
+    .section-label:after { content: ''; flex: 1; height: 1px; background: currentColor; opacity: .18; }
+    .research .section-label { color: #c5d2c4; }
+    .research-grid { display: grid; grid-template-columns: 1.12fr .88fr; column-gap: 12%; align-items: start; }
+    .research-heading { font-family: var(--serif); font-weight: 400; font-size: clamp(51px, 5.3vw, 86px); line-height: 1.04; letter-spacing: -.045em; margin: 0; max-width: 710px; }
+    .research-heading em { color: #d6c4a9; font-weight: 400; }
+    .research-body { max-width: 480px; padding-top: 6px; }
+    .research-body p { font-size: 17px; line-height: 1.92; color: #d2dbd0; margin: 0 0 28px; }
+    .research-body p:first-child { color: #f6f5e9; }
+    .research-note { border-top: 1px solid #5c6c61; margin-top: 49px; padding-top: 20px; display: flex; gap: 20px; justify-content: space-between; color: #b5c2b3; font-size: 12px; line-height: 1.6; }
+    .research-note a { color: #f1eddc; border-bottom: 1px solid #829184; }
+
+    .work { padding: 119px 0 125px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 57px; }
+    .section-head .smallcap { margin: 0 0 21px; color: #70786d; }
+    .section-title { font-family: var(--serif); font-size: clamp(55px, 5.3vw, 82px); font-weight: 400; letter-spacing: -.048em; line-height: .98; margin: 0; }
+    .section-subtitle { font-size: 14px; line-height: 1.75; color: #727a70; max-width: 280px; margin: 0 0 5px; }
+    .work-list { border-top: 1px solid #bfc4b9; }
+    .work-item { border-bottom: 1px solid #cfd2c8; display: grid; grid-template-columns: 90px minmax(0, 1fr) 1fr 58px; align-items: baseline; gap: 30px; padding: 35px 0 39px; transition: padding .22s ease; }
+    .work-item:hover { padding-left: 8px; padding-right: 8px; }
+    .work-index { color: #899086; font-size: 12px; }
+    .work-title { font-family: var(--serif); font-size: clamp(29px, 2.65vw, 42px); line-height: 1.15; letter-spacing: -.025em; font-weight: 400; margin: 0; max-width: 470px; }
+    .work-meta { color: #5d685d; font-size: 13px; line-height: 1.8; max-width: 370px; }
+    .work-meta .tag { display: block; font-size: 10px; line-height: 1; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #81897e; margin-bottom: 13px; }
+    .work-link { align-self: center; border: 1px solid #aeb6aa; width: 47px; height: 47px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+    a.work-link:hover { background: var(--forest); border-color: var(--forest); color: white; }
+    .work-link.empty { border: none; color: #a6ada1; font-size: 16px; }
+
+    .publication { background: #e9e8df; padding: 90px 0 92px; border-top: 1px solid #d6d8ce; border-bottom: 1px solid #d6d8ce; }
+    .publication-grid { display: grid; grid-template-columns: .28fr 1fr; gap: 10%; }
+    .publication-title { font-family: var(--serif); font-size: clamp(39px, 4vw, 59px); line-height: 1.12; letter-spacing: -.035em; font-weight: 400; max-width: 820px; margin: 0 0 27px; }
+    .publication-detail { font-size: 13px; color: #626b60; line-height: 1.85; margin-bottom: 25px; }
+    .publication-detail em { font-style: italic; }
+    .inline-link { font-size: 12px; display: inline-flex; align-items: center; gap: 16px; padding-bottom: 9px; border-bottom: 1px solid #50604e; font-weight: 600; }
+
+    .writing { padding: 115px 0 122px; }
+    .writing-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 11%; }
+    .writing-lead { font-size: 17px; line-height: 1.9; max-width: 360px; color: #626d62; margin: 25px 0 0; }
+    .notes-list { border-top: 1px solid #c9cec3; }
+    .note { display: block; padding: 32px 0 34px; border-bottom: 1px solid #c9cec3; }
+    .note-heading { font-family: var(--serif); font-size: 30px; font-weight: 400; letter-spacing: -.026em; line-height: 1.3; margin: 10px 0 0; display: flex; justify-content: space-between; align-items: start; gap: 25px; }
+    .note-heading .arrow { font-family: var(--sans); font-size: 21px; color: #526653; margin-top: 3px; }
+    .note-meta { font-size: 10px; text-transform: uppercase; letter-spacing: .15em; font-weight: 600; color: #858c82; }
+
+    .about { padding: 116px 0 125px; background: #eeefe7; border-top: 1px solid #d9ddd3; }
+    .about-grid { display: grid; grid-template-columns: .77fr 1.23fr; gap: 11%; align-items: start; }
+    .portrait-panel { padding-top: 8px; }
+    .portrait-art { width: 100%; aspect-ratio: 4 / 4.65; background: #d3d5ca; overflow: hidden; position: relative; display: grid; place-items: center; }
+    .portrait-art:before { content: ''; position: absolute; inset: 25px; border: 1px solid rgba(29,46,38,.22); }
+    .portrait-placeholder { font-family: var(--serif); font-style: italic; font-size: 100px; color: #57675c; letter-spacing: -.065em; }
+    .portrait-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 32%; filter: grayscale(100%) sepia(12%) contrast(.91); mix-blend-mode: multiply; opacity: .85; }
+    .portrait-caption { padding-top: 12px; font-size: 11px; color: #858d82; line-height: 1.6; }
+    .about-copy .section-title { max-width: 600px; margin-bottom: 30px; }
+    .about-copy > p { font-size: 17px; line-height: 1.95; max-width: 635px; color: #545e54; margin: 0 0 19px; }
+    .education { display: grid; grid-template-columns: 155px 1fr; border-top: 1px solid #c8cec4; margin-top: 46px; padding-top: 17px; }
+    .education .smallcap { padding-top: 8px; color: #7e887d; }
+    .edu-list { display: flex; flex-direction: column; }
+    .edu-row { padding: 12px 0 17px; display: flex; justify-content: space-between; gap: 25px; border-bottom: 1px solid #d4d9ce; }
+    .edu-row:last-child { border-bottom: 0; }
+    .edu-main { font-size: 14px; font-weight: 500; line-height: 1.6; }
+    .edu-main span { color: #737d72; font-size: 12px; display: block; font-weight: 400; }
+    .edu-year { color: #7b8378; white-space: nowrap; font-size: 12px; }
+
+    .footer { color: #ecede4; background: var(--forest-dark); padding: 88px 0 32px; }
+    .footer-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 15%; padding-bottom: 104px; }
+    .footer-heading { font-family: var(--serif); letter-spacing: -.042em; font-size: clamp(48px, 5vw, 79px); font-weight: 400; line-height: 1.06; margin: 24px 0 0; }
+    .footer-heading em { color: #ccb99f; font-weight: 400; }
+    .footer-right { align-self: end; padding-bottom: 7px; }
+    .footer-right p { color: #bfcabf; font-size: 16px; line-height: 1.8; max-width: 430px; margin: 0 0 24px; }
+    .footer-links { display: flex; gap: 26px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; border-bottom: 1px solid #829082; padding-bottom: 9px; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid #536459; padding-top: 22px; font-size: 11px; color: #a7b8a9; }
+    .footer-bottom .top-link { color: #e7ebdf; }
+    section[id], footer[id] { scroll-margin-top: 40px; }
+    @media (max-width: 1180px) {
+      .wrap { width: min(var(--max), calc(100% - 80px)); }
+      .hero-title { font-size: clamp(68px, 8vw, 112px); }
+      .figure-frame { height: 480px; }
+      .work-item { grid-template-columns: 50px minmax(0, 1fr) .9fr 48px; gap: 23px; }
+    }
+    @media (max-width: 850px) {
+      .wrap { width: calc(100% - 52px); }
+      .header-inner { height: 72px; }
+      .menu-button { display: block; }
+      .nav { display: none; position: absolute; top: 71px; left: 0; right: 0; padding: 25px 26px 32px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 15px 24px rgba(18,36,26,.05); }
+      .nav.open { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
+      .nav a { font-size: 15px; }
+      .hero { padding-top: 37px; }
+      .hero-top { padding-bottom: 44px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: clamp(75px, 11.5vw, 115px); }
+      .hero-blurb { max-width: 650px; }
+      .figure-frame { margin-top: 64px; width: 100%; max-width: 680px; height: 420px; }
+      .hero-index { margin-top: 54px; }
+      .research { padding: 85px 0; }
+      .research-grid { grid-template-columns: 1fr; row-gap: 35px; }
+      .research-body { max-width: 640px; }
+      .section-label { margin-bottom: 35px; }
+      .work { padding: 85px 0; }
+      .work-item { grid-template-columns: 45px 1fr 48px; gap: 15px; }
+      .work-meta { grid-column: 2; grid-row: 2; }
+      .work-link { grid-column: 3; grid-row: 1 / 3; }
+      .publication-grid { grid-template-columns: 1fr; gap: 30px; }
+      .writing { padding: 85px 0; }
+      .writing-grid { grid-template-columns: 1fr; gap: 50px; }
+      .about { padding: 85px 0; }
+      .about-grid { grid-template-columns: .68fr 1fr; gap: 7%; }
+      .about-copy .section-title { font-size: 54px; }
+      .education { display: block; }
+      .education .smallcap { margin-bottom: 15px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: calc(100% - 38px); }
+      .identity { gap: 10px; }
+      .identity-name { font-size: 17px; }
+      .monogram { width: 32px; height: 32px; font-size: 18px; }
+      .header-inner { height: 68px; }
+      .nav { top: 67px; }
+      .hero { padding: 29px 0 60px; }
+      .hero-top { padding-bottom: 55px; font-size: 9px; }
+      .hero-top .top-right { display: none; }
+      .hero-kicker { margin-bottom: 19px; }
+      .hero-title { font-size: clamp(64px, 13.65vw, 88px); line-height: .94; letter-spacing: -.065em; margin: 0 0 28px -3px; }
+      .hero-blurb { font-size: 16px; line-height: 1.8; }
+      .hero-cta { margin-top: 26px; }
+      .figure-frame { padding: 16px; margin-top: 44px; height: 330px; }
+      .hero-index { margin-top: 34px; padding-top: 19px; line-height: 1.5; }
+      .hero-index .right { display: none; }
+      .research { padding: 69px 0 74px; }
+      .research-heading { font-size: clamp(47px, 10.5vw, 69px); }
+      .research-body p { font-size: 16px; line-height: 1.85; }
+      .research-note { flex-direction: column; gap: 7px; }
+      .section-head { align-items: start; display: block; margin-bottom: 35px; }
+      .section-subtitle { margin-top: 20px; }
+      .section-title { font-size: 60px; }
+      .work { padding: 70px 0 75px; }
+      .work-item { grid-template-columns: 34px 1fr 35px; gap: 11px; padding: 30px 0; }
+      .work-index { font-size: 11px; }
+      .work-title { font-size: 32px; }
+      .work-meta { font-size: 13px; }
+      .work-link { width: 32px; height: 32px; font-size: 17px; }
+      .publication { padding: 70px 0; }
+      .publication-title { font-size: 41px; }
+      .writing { padding: 76px 0 80px; }
+      .writing-grid { gap: 37px; }
+      .note-heading { font-size: 26px; }
+      .about { padding: 73px 0 84px; }
+      .about-grid { grid-template-columns: 1fr; gap: 50px; }
+      .portrait-panel { max-width: 385px; }
+      .about-copy .section-title { font-size: 55px; }
+      .about-copy > p { font-size: 16px; }
+      .education { margin-top: 34px; }
+      .edu-row { gap: 10px; }
+      .edu-main { font-size: 13px; }
+      .footer { padding-top: 72px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 75px; }
+      .footer-heading { font-size: 61px; }
+      .footer-bottom { line-height: 1.7; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Anand Hari Natarajan","url":"https://anand-hari-natarajan.com/","jobTitle":"Physics Doctoral Researcher","affiliation":{"@type":"CollegeOrUniversity","name":"University of Arizona"},"sameAs":["https://www.linkedin.com/in/anand-hari-natarajan","https://physics.arizona.edu/person/anand-hari-natarajan"]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="identity" href="#top" aria-label="Anand Hari Natarajan, home"><span class="monogram" aria-hidden="true">a.</span><span class="identity-name">Anand Hari Natarajan</span></a>
+      <button id="menuButton" class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <a href="#research">Research</a><a href="#work">Selected work</a><a href="#writing">Writing</a><a href="#about">About</a><a class="contact-nav" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="wrap">
+        <div class="hero-top smallcap"><span>A personal archive of research &amp; thought</span><span class="top-right">Tucson, Arizona &nbsp; · &nbsp; 2026</span></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-kicker smallcap"><span class="rule"></span><span>Physics doctoral researcher</span></div>
+            <h1 id="heroTitle" class="hero-title"><span>Anand Hari</span><span class="last">Natarajan.</span></h1>
+            <p class="hero-blurb"><strong>I study the dynamics of quantum matter</strong>, particularly open quantum systems and ultrafast interactions between light and matter. My route into theory has passed through materials research, nanofabrication, and electrical engineering.</p>
+            <a href="#research" class="hero-cta">Explore my research <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <div class="figure-frame" aria-label="Decorative scientific illustration of an oscillatory field and response">
+            <div class="figure-label"><span>Fig. 01 &nbsp; / &nbsp; Field &amp; response</span><span>Conceptual</span></div>
+            <svg class="wave-art" viewBox="0 0 600 490" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="artTitle artDesc">
+              <title id="artTitle">Oscillatory dynamics</title><desc id="artDesc">A mathematical-style illustration of two waveforms with different envelopes, rendered over a light coordinate grid. The illustration is schematic, not research data.</desc>
+              <g opacity=".68">
+                <path class="fine" d="M74 75 V415 M126 75 V415 M178 75 V415 M230 75 V415 M282 75 V415 M334 75 V415 M386 75 V415 M438 75 V415 M490 75 V415 M542 75 V415" />
+                <path class="fine" d="M48 109 H556 M48 161 H556 M48 213 H556 M48 265 H556 M48 317 H556 M48 369 H556" />
+                <path class="major" d="M48 265 H556 M74 75 V415" />
+              </g>
+              <path d="M74 255 V275 M178 261 V269 M282 261 V269 M386 261 V269 M490 261 V269" stroke="#8b998b" stroke-width="1" />
+              <path d="M65 109 H83 M65 213 H83 M65 317 H83 M65 369 H83" stroke="#8b998b" stroke-width="1" />
+              <path id="signalA" class="curve" d="" />
+              <path id="signalB" class="curve-two" d="" />
+              <text class="math" x="90" y="105">E(t)</text><text class="math" x="502" y="253">t</text>
+              <text x="84" y="447">TIME DOMAIN</text><text x="556" y="447" text-anchor="end">NOT TO SCALE</text>
+              <circle cx="282" cy="265" r="4" fill="#294b39" />
+            </svg>
+            <div class="figure-foot"><span>A sketch of driven dynamics</span><span>01 / ∞</span></div>
+          </div>
+        </div>
+        <div class="hero-index"><span><strong>Currently</strong> &nbsp; University of Arizona · Department of Physics</span><span class="right">Theory informed by physical experiment</span></div>
+      </div>
+    </section>
+
+    <section id="research" class="research" aria-labelledby="researchTitle">
+      <div class="wrap">
+        <div class="section-label smallcap"><span>01 &nbsp; / &nbsp; Current research</span></div>
+        <div class="research-grid">
+          <h2 id="researchTitle" class="research-heading">Theoretical physics at the <em>attosecond</em> scale.</h2>
+          <div class="research-body">
+            <p>My doctoral research is in theoretical atomic, molecular, optical, and condensed matter physics, with an emphasis on open quantum systems and attosecond light–matter interactions.</p>
+            <p>I am interested in how quantum systems evolve under ultrafast excitation, how their surroundings affect that evolution, and how a mathematical description can reveal the physical processes underneath an observation.</p>
+            <p>Before turning to theory, I spent several years working with real materials and devices. That experience continues to shape how I approach a physical question.</p>
+            <div class="research-note"><span>Ph.D. in Physics · University of Arizona</span><span>Research with <a href="https://physics.arizona.edu/people/nikolay-golubev" target="_blank" rel="noopener noreferrer">Prof. Nikolay Golubev <span aria-hidden="true">↗</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work" aria-labelledby="workTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="smallcap">02 &nbsp; / &nbsp; Research &amp; projects</p><h2 id="workTitle" class="section-title">Selected work.</h2></div>
+          <p class="section-subtitle">A few problems I have spent time with, from modeling light to building the devices that measure matter.</p>
+        </div>
+        <div class="work-list">
+          <article class="work-item">
+            <span class="work-index smallcap">01 / 2024</span>
+            <h3 class="work-title">Making high-harmonic generation visible.</h3>
+            <div class="work-meta"><span class="tag">Theory · computation</span>An interactive, web-based illustration of high-harmonic generation in ultrafast nonlinear optics, developed during a summer research internship at the University of Arizona.</div>
+            <span class="work-link empty" aria-label="Project description only" title="Project description only">—</span>
+          </article>
+          <article class="work-item">
+            <span class="work-index smallcap">02 / 2024</span>
+            <h3 class="work-title">Accelerating the growth of atomically thin MoS₂.</h3>
+            <div class="work-meta"><span class="tag">Materials · experiment · optimization</span>Bayesian-optimization-guided CVD synthesis of monolayer MoS₂, combining a real growth process with optical characterization and data-driven experimental choices.</div>
+            <a class="work-link" href="https://anand-hari-natarajan.com/2024/03/06/optimized-synthesis-of-2d-materials-using-machine-learning/" target="_blank" rel="noopener noreferrer" aria-label="Read about MoS2 project">↗</a>
+          </article>
+          <article class="work-item">
+            <span class="work-index smallcap">03 / 2023</span>
+            <h3 class="work-title">Acoustic-wave pressure sensors for harsh environments.</h3>
+            <div class="work-meta"><span class="tag">MEMS · modeling · fabrication</span>Design and fabrication of piezoelectric surface-acoustic-wave devices, from simulation and mask layout to cleanroom processing and RF characterization.</div>
+            <a class="work-link" href="https://anand-hari-natarajan.com/2024/03/11/design-and-fabrication-of-piezoelectric-mems-saw-pressure-sensors/" target="_blank" rel="noopener noreferrer" aria-label="Read about SAW pressure sensors project">↗</a>
+          </article>
+          <article class="work-item">
+            <span class="work-index smallcap">04 / 2022</span>
+            <h3 class="work-title">Magnetic thin films and exchange anisotropy.</h3>
+            <div class="work-meta"><span class="tag">Condensed matter · experiment</span>Growing MnAl-based thin films and studying how composition and heat treatment shape their magnetic response.</div>
+            <a class="work-link" href="https://anand-hari-natarajan.com/2022/10/12/synthesis-and-characterization-of-ferromagnetic-thin-films/" target="_blank" rel="noopener noreferrer" aria-label="Read about magnetic thin films project">↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="publication" id="publications" aria-labelledby="publicationTitle">
+      <div class="wrap publication-grid">
+        <div class="smallcap" style="color:#6e786b">03 &nbsp; / &nbsp; Publication<br><span style="font-weight:400;letter-spacing:.03em;text-transform:none">Advanced Materials Technologies · 2025</span></div>
+        <div>
+          <h2 id="publicationTitle" class="publication-title">Accelerating Optimal Synthesis of Atomically Thin MoS₂: A Constrained Bayesian Optimization Guided Brachistochrone Approach</h2>
+          <div class="publication-detail">Y. Wang, G. Li, <strong>A. H. Natarajan</strong>, S. Mukerjee, X. Jin, and S. Kar.<br><em>Advanced Materials Technologies</em> 10, 2401465 (2025).</div>
+          <a class="inline-link" href="https://doi.org/10.1002/admt.202401465" target="_blank" rel="noopener noreferrer">Read publication <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing" class="writing" aria-labelledby="writingTitle">
+      <div class="wrap writing-grid">
+        <div>
+          <p class="smallcap" style="color:#778075;margin:0 0 21px">04 &nbsp; / &nbsp; Notes &amp; essays</p>
+          <h2 id="writingTitle" class="section-title">In writing.</h2>
+          <p class="writing-lead">I have long enjoyed writing to understand an idea more deeply. These are some earlier notes, with more to come.</p>
+        </div>
+        <div class="notes-list">
+          <a class="note" href="https://anand-hari-natarajan.com/2018/10/20/meaning-of-newtons-laws-how-to-interpret-and-understand-them-part-1/" target="_blank" rel="noopener noreferrer">
+            <span class="note-meta">Essay &nbsp; · &nbsp; October 2018</span>
+            <span class="note-heading">Meaning of Newton’s laws: on interpretation and intuition <span class="arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="note" href="https://anand-hari-natarajan.com/2016/12/06/welcome-to-order-in-entropy/" target="_blank" rel="noopener noreferrer">
+            <span class="note-meta">Essay &nbsp; · &nbsp; December 2016</span>
+            <span class="note-heading">Order in Entropy: an introduction <span class="arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="note" href="https://anand-hari-natarajan.com/blog/" target="_blank" rel="noopener noreferrer">
+            <span class="note-meta">The archive</span>
+            <span class="note-heading">Explore all writing <span class="arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="aboutTitle">
+      <div class="wrap about-grid">
+        <div class="portrait-panel">
+          <div class="portrait-art">
+            <span class="portrait-placeholder" aria-hidden="true">a.</span>
+            <img class="portrait-img" src="https://w3.physics.arizona.edu/sites/default/files/styles/az_medium/public/2024-09/anand-hari-natarajan.jpg.webp?itok=8mJFfpYa" alt="Portrait of Anand Hari Natarajan" loading="lazy" onerror="this.hidden=true" />
+          </div>
+          <div class="portrait-caption">Portrait from the University of Arizona Department of Physics.</div>
+        </div>
+        <div class="about-copy">
+          <p class="smallcap" style="color:#778075;margin:0 0 21px">05 &nbsp; / &nbsp; A little background</p>
+          <h2 id="aboutTitle" class="section-title">A physicist by curiosity, an engineer by experience.</h2>
+          <p>I am a Physics Ph.D. student at the University of Arizona. I came to theoretical physics by a somewhat circuitous route: an undergraduate education in electrical engineering, followed by a master's in applied physics and engineering at Northeastern University.</p>
+          <p>Along the way, I worked with magnetic materials, two-dimensional semiconductors, piezoelectric MEMS and their experimental apparatus. Each project offered a different way to ask how nature works, and a different appreciation for the distance between a clean model and an actual measurement.</p>
+          <p>Today, my attention is on theory. I still find the most interesting questions to be those that can be approached with mathematical precision and a strong sense of physical reality.</p>
+          <div class="education">
+            <div class="smallcap">Education</div>
+            <div class="edu-list">
+              <div class="edu-row"><div class="edu-main">University of Arizona<span>Ph.D., Physics · in progress</span></div><div class="edu-year">2024 — present</div></div>
+              <div class="edu-row"><div class="edu-main">Northeastern University<span>M.S., Applied Physics &amp; Engineering</span></div><div class="edu-year">2021 — 2023</div></div>
+              <div class="edu-row"><div class="edu-main">Anna University<span>B.E., Electrical &amp; Electronics Engineering</span></div><div class="edu-year">2015 — 2019</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div><p class="smallcap" style="color:#bacbbb;margin:0">06 &nbsp; / &nbsp; Correspondence</p><h2 class="footer-heading">Good questions<br>begin with <em>curiosity.</em></h2></div>
+        <div class="footer-right"><p>For conversations about research, interesting problems, or potential collaborations, feel free to get in touch.</p><div class="footer-links"><a href="mailto:anandnatarajan@arizona.edu">Email <span class="arrow" aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/anand-hari-natarajan" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a><a href="https://physics.arizona.edu/person/anand-hari-natarajan" target="_blank" rel="noopener noreferrer">University profile <span class="arrow" aria-hidden="true">↗</span></a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> Anand Hari Natarajan</span><span>University of Arizona · Tucson, AZ</span><a class="top-link" href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const menu = document.getElementById('menuButton');
+      const nav = document.getElementById('mainNav');
+      menu.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        menu.setAttribute('aria-expanded', String(open));
+      });
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false');
+      }));
+      document.getElementById('year').textContent = String(new Date().getFullYear());
+      // Decorative illustrative waveforms (not experimental data).
+      const pathFor = (fn) => {
+        const d = [];
+        for (let x=74; x<=546; x+=2) d.push(`${x===74?'M':'L'}${x} ${fn(x).toFixed(2)}`);
+        return d.join(' ');
+      };
+      const gaussian = (x, mu, sigma) => Math.exp(-0.5*Math.pow((x-mu)/sigma,2));
+      document.getElementById('signalA').setAttribute('d', pathFor(x => 265 - 106*gaussian(x,301,114)*Math.sin((x-75)*0.111)));
+      document.getElementById('signalB').setAttribute('d', pathFor(x => 265 - 60*gaussian(x,337,102)*Math.sin((x-104)*0.137+0.5)));
+    })();
+  </script>
+</body>
+</html>
